@@ -29,7 +29,7 @@ Step 7: Save and run the application.
 ```
 /*
 Program to print the avaliable sensor in android mobile devices”.
-Developed by: JAYA SALINI A
+Developed by:  SALINI A
 Registeration Number :212223220091
 */
 ```
