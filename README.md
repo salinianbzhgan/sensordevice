@@ -29,15 +29,102 @@ Step 7: Save and run the application.
 ```
 /*
 Program to print the avaliable sensor in android mobile devices”.
-Developed by:
-Registeration Number :
+Developed by: JAYA SALINI A
+Registeration Number :212223220091
 */
 ```
 
 ## OUTPUT
+## mainactivity.java
+```
+package com.example.sensorlist;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
+import android.os.Bundle;
+import android.widget.TextView;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        TextView tvCount = findViewById(R.id.tvCount);
+        TextView tvSensors = findViewById(R.id.tvSensors);
 
 
+        SensorManager sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
+
+        List<Sensor> sensors = sensorManager.getSensorList(Sensor.TYPE_ALL);
+
+
+        tvCount.setText("Total Sensors: " + sensors.size());
+
+        StringBuilder sensorList = new StringBuilder();
+
+        for (Sensor sensor : sensors) {
+            sensorList.append("• ").append(sensor.getName()).append("\n");
+        }
+
+
+        if (sensors.size() > 0) {
+            tvSensors.setText(sensorList.toString());
+        } else {
+            tvSensors.setText("No sensors found!");
+        }
+    }
+}
+```
+## activity_main.xml
+```
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Available Sensors"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tvCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Count: 0"
+        android:textSize="16sp"
+        android:layout_marginBottom="10dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvSensors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loading..."
+            android:textSize="14sp"/>
+
+    </ScrollView>
+
+</LinearLayout>
+```
+
+<img width="1903" height="1024" alt="image" src="https://github.com/user-attachments/assets/57bf4e0f-7c64-41b1-9a3f-71238fc734a8" />
 
 ## RESULT
 Thus a Simple Android Application to display the avaliable sensor in android mobile devices using Sensor Manager in Android Studio is developed and executed successfully.
