@@ -34,7 +34,7 @@ Registeration Number :212223220091
 */
 ```
 
-## OUTPUT
+
 ## mainactivity.java
 ```
 package com.example.sensorlist;
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
 </LinearLayout>
 ```
-
+## OUTPUT
 <img width="1903" height="1024" alt="image" src="https://github.com/user-attachments/assets/57bf4e0f-7c64-41b1-9a3f-71238fc734a8" />
 
 ## RESULT
